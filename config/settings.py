@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'index',
     'corsheaders',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -79,6 +80,7 @@ CORS_ALLOW_HEADERS = [
 
 
 ROOT_URLCONF = 'config.urls'
+
 
 TEMPLATES = [
     {
