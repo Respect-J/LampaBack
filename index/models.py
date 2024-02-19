@@ -15,13 +15,14 @@ class Category(BaseModel):
     title_en = models.CharField(max_length=256, null=True, blank=True)
     title_ru = models.CharField(max_length=256, null=True, blank=True)
     img = models.FileField(upload_to='country/')
-    description_en = models.TextField(null=True, blank=True)
-    description_ru = models.TextField(null=True, blank=True)
+
 
 
 class Product(BaseModel):
     title_en = models.CharField(max_length=256, null=True, blank=True)
     title_ru = models.CharField(max_length=256, null=True, blank=True)
-    tour = models.ForeignKey(Category, on_delete=models.CASCADE)
+    description_en = models.TextField(null=True, blank=True)
+    description_ru = models.TextField(null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     img = models.FileField(upload_to='product/')
-
+    price = models.CharField(max_length=56, null=True, blank=True, default=0)
